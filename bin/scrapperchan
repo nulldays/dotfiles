@@ -1,0 +1,79 @@
+#!/usr/bin/env python3 
+import os
+import sys
+import re
+import json
+import urllib3
+
+from time import sleep
+
+# Colors
+BLUE = '\33[92m'
+YELLOW = '\033[93m'
+RESET = '\33[0m'
+
+# Request limit per second of the API
+REQ_LIMIT = 2
+HTTP = urllib3.PoolManager()
+
+
+def getImage(board, imgID, ext, filename):
+    # Downloads the target image via the API
+
+    if os.path.exists(filename + ext):
+        print(YELLOW + 'Image already downloaded' + RESET)
+        return -1
+
+    IMAGE_API = 'https://i.4cdn.org/{}/{}{}'.format(board, imgID, ext)
+    
+    req = HTTP.request('GET', IMAGE_API, preload_content=False)
+    with open(filename + ext, 'wb') as f:
+        for chunk in req.stream(32):
+            f.write(chunk)
+    req.release_conn()
+    sleep(REQ_LIMIT)
+
+
+def parseThread(URL):
+    # Parses the response of call of the API to JSON
+
+    match = re.match(r'https:\/\/(boards\.4channel\.org|boards\.4chan\.org)\/(\w+)\/thread\/(\d+)', URL)
+    BOARD_API = 'https://a.4cdn.org/{board}/thread/{thread_no}.json'.format(
+        board=match.group(2),
+        thread_no=match.group(3)
+    )
+
+    req = HTTP.request('GET', BOARD_API)
+    board = json.loads(req.data.decode('utf-8'))
+    board['board'] = match.group(2)
+    board['thread_no'] = match.group(3)
+
+    return board
+
+
+def main():
+
+    if len(sys.argv) == 1:
+        print('No URL given')
+        return -1
+    elif len(sys.argv) == 2:
+        print('No directory name given')
+        return -1
+
+    # Create and/or change into new directory
+    if not os.path.exists(sys.argv[2]):
+        os.mkdir(sys.argv[2])
+    os.chdir(sys.argv[2])
+
+    thread = parseThread(sys.argv[1])
+    sleep(REQ_LIMIT)
+
+    for post in thread['posts']:
+        if 'tim' in post:
+            msg = BLUE + 'Downloading:' + RESET + '\t{}'
+            print(msg.format(post['filename'] + post['ext']))
+            getImage(thread['board'], post['tim'], post['ext'], post['filename'])
+
+
+if __name__ == "__main__":
+   main() 
