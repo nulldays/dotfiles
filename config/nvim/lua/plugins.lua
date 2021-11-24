@@ -11,8 +11,7 @@ require "paq" {
     -- paq itself
     "savq/paq-nvim";
     -- Theme
-    {"Mofiqul/dracula.nvim", as="Dracula"};
-    {"altercation/vim-colors-solarized", as="Solarized"};
+    "shaunsingh/nord.nvim";
     -- Apperance
     "kyazdani42/nvim-web-devicons";
     "kyazdani42/nvim-tree.lua";

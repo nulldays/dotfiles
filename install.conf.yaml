@@ -6,7 +6,6 @@
 - clean: ['~']
 
 - create:
-    - ~/Downloads
     - ~/.local/bin
 
 - link:

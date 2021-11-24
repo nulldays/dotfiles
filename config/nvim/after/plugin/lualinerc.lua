@@ -2,7 +2,7 @@
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = vim.g.colors_name,
+    theme = 'nord',
     component_separators = {'', ''},
     section_separators = {'', ''},
     disabled_filetypes = {}

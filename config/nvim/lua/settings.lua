@@ -14,7 +14,7 @@ local bo = vim.o
 cmd "syntax enable"
 set.termguicolors = true
 set.background="dark"
-cmd "colorscheme dracula"
+cmd "colorscheme nord"
 o.lazyredraw = true
 o.ignorecase = true
 cmd "filetype plugin indent on"
