@@ -13,10 +13,9 @@
     ~/.config/:
         glob: true
         path: config/*
-    # TODO: resolve the linking of "bin"
-    #~/.local/bin/:
-    #   glob: true
-    #   path: bin/*
+    # globs only works for more than 1 file
+    ~/.local/bin/scrapperchan:
+        path: scripts/scrapperchan
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
