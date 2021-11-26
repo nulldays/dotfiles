@@ -11,7 +11,6 @@ export EDITOR=nvim
 # ALIASES
 
 alias ..="cd .."
-alias v=nvim
 alias vim=nvim
 alias bye="shutdown now"
 
