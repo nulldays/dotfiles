@@ -4,5 +4,8 @@
 require "plugins"
 -- Settings
 require "settings"
+
 -- Mappings
-require "maps"
+vim.g.mapleader = ' '
+-- local map = vim.api.nvim_set_keymap
+-- local options = { noremap = true }

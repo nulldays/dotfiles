@@ -9,7 +9,7 @@
     - ~/.local/bin
 
 - link:
-    ~/.bashrc: bashrc
+    ~/.zshrc: zshrc
     ~/.config/:
         glob: true
         path: config/*

@@ -1,28 +1,35 @@
 -- settings.lua
+local set = vim.opt -- to set options
 
--- Global Aliases
-local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
-local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
-local g = vim.g      -- a table to access global variables
-local set = vim.opt  -- to set options
-
-local o = vim.o
-local wo = vim.o
-local bo = vim.o
-
--- Basic Configs 
-cmd "syntax enable"
-set.termguicolors = true
-set.background="dark"
-cmd "colorscheme nord"
-o.lazyredraw = true
-o.ignorecase = true
-cmd "filetype plugin indent on"
-cmd "set splitbelow splitright"
+vim.cmd [[
+    syntax enable
+    colorscheme solarized
+]]
+set.swapfile       = false
+set.background     = 'light'
+set.termguicolors  = true
+set.signcolumn     = 'yes'
+set.wildmode       = "longest:full"
+set.wildoptions    = "pum"
+set.splitbelow     = true
+set.splitright     = true
+set.guicursor      = ''
+set.number         = true
+set.relativenumber = true
+set.showcmd        = true
+set.cmdheight      = 1
+set.ignorecase     = true
+set.smartcase      = true
+set.hlsearch       = false
+set.incsearch      = true
+set.hidden         = true
+set.wrap           = false
+set.scrolloff      = 8
+set.updatetime     = 1000
+set.showmatch      = true
 
 -- Tabs
-bo.expandtab = true
-bo.tabstop   = 4
-bo.shiftwidth= 4
-
-wo.number = true
+set.tabstop     = 4
+set.softtabstop = 4
+set.shiftwidth  = 4
+set.expandtab   = true
