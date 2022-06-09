@@ -28,6 +28,9 @@ set.scrolloff      = 8
 set.updatetime     = 1000
 set.showmatch      = true
 
+-- Necessary for nvim-cmp
+set.completeopt = {"menu", "menuone", "noselect"}
+
 -- Tabs
 set.tabstop     = 4
 set.softtabstop = 4

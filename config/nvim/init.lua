@@ -4,6 +4,8 @@
 require "plugins"
 -- Settings
 require "settings"
+-- LSP
+require "lsp"
 
 -- Mappings
 vim.g.mapleader = ' '

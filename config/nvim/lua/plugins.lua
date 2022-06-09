@@ -15,14 +15,24 @@ require "paq" {
   'ishan9299/nvim-solarized-lua';
 
   -- Features
-  'nvim-telescope/telescope.nvim';
+  {'nvim-treesitter/nvim-treesitter', run=vim.fn[':TSUpdate']};
+
   'nvim-lua/plenary.nvim';
   'BurntSushi/ripgrep';
+  'nvim-telescope/telescope.nvim';
+
   "hoob3rt/lualine.nvim";
+  
   -- May not need nvim-tree?
-  --"kyazdani42/nvim-web-devicons";
+  -- "kyazdani42/nvim-web-devicons";
   --"kyazdani42/nvim-tree.lua";
 
   -- LSP
   "neovim/nvim-lspconfig";
+  "hrsh7th/nvim-cmp";
+  'hrsh7th/cmp-nvim-lsp';
+  'hrsh7th/cmp-buffer';
+  'hrsh7th/cmp-path';
+  'L3MON4D3/LuaSnip';
+  'saadparwaiz1/cmp_luasnip';
 }
