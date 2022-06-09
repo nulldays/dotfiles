@@ -10,6 +10,7 @@
 
 - link:
     ~/.zshrc: zshrc
+    ~/.profile: profile
     ~/.config/:
         glob: true
         path: config/*
