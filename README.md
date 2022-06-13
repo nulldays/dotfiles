@@ -1,5 +1,6 @@
 # Dotfiles
 
-My dotfiles for:
-    - Neovim
-    - Zsh
+My dotfiles:
+ - Terminal: Alacritty
+ - Shell: ZSH
+ - Editor: Neovim
