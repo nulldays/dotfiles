@@ -1,6 +1,3 @@
 # Dotfiles
 
-My dotfiles:
- - Terminal: Alacritty
- - Shell: ZSH
- - Editor: Neovim
+My dotifiles for a stuff I use in my linux machines and in WSL enviroments
