@@ -1,5 +1,4 @@
-local Remap = require("nulldays.keymap")
-local nnoremap = Remap.nnoremap
+local nnoremap = require("nulldays.keymap").nnoremap
 
 nnoremap("<leader>ps", function()
     require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})
