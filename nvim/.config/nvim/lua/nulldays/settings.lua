@@ -5,8 +5,8 @@ vim.cmd [[
     syntax enable
     colorscheme solarized
 ]]
-set.swapfile       = false
 set.background     = 'light'
+set.swapfile       = false
 set.termguicolors  = true
 set.signcolumn     = 'yes'
 set.wildmode       = "longest:full"
@@ -36,3 +36,5 @@ set.tabstop     = 4
 set.softtabstop = 4
 set.shiftwidth  = 4
 set.expandtab   = true
+
+vim.g.mapleader = " "
