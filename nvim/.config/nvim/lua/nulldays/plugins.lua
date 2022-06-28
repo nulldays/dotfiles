@@ -13,6 +13,7 @@ require "paq" {
 
   -- Theme and Appearance
   "ishan9299/nvim-solarized-lua";
+  "folke/tokyonight.nvim";
   "hoob3rt/lualine.nvim";
   "kyazdani42/nvim-web-devicons";
 

@@ -1,11 +1,10 @@
 -- settings.lua
 local set = vim.opt -- to set options
 
-vim.cmd [[
-    syntax enable
-    colorscheme solarized
-]]
-set.background     = 'light'
+vim.g.mapleader = " "
+
+vim.cmd("colorscheme tokyonight")
+set.background     = 'dark'
 set.swapfile       = false
 set.termguicolors  = true
 set.signcolumn     = 'yes'
@@ -37,4 +36,3 @@ set.softtabstop = 4
 set.shiftwidth  = 4
 set.expandtab   = true
 
-vim.g.mapleader = " "
