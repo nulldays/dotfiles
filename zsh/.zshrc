@@ -24,3 +24,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # GO config
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+
+# pnpm
+export PNPM_HOME="/home/user/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
