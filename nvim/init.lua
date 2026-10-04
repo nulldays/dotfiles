@@ -3,9 +3,6 @@
 --
 
 vim.o.winborder = "bold"
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.showtabline = 4
 vim.o.signcolumn = "yes"
 
 vim.o.swapfile = false
@@ -25,27 +22,27 @@ vim.g.mapleader = " "
 --
 
 local hooks = function(ev)
-	local name, kind = ev.data.spec.name, ev.data.kindj
+    local name, kind = ev.data.spec.name, ev.data.kindj
 
-	if name == 'fzf-native' and (kind == 'install' or kind == 'update') then
-		vim.system({ 'make' }, { cwd = ev.data.path })
-	end
+    if name == 'fzf-native' and (kind == 'install' or kind == 'update') then
+        vim.system({ 'make' }, { cwd = ev.data.path })
+    end
 end
 vim.api.nvim_create_autocmd('PackChanged', { callback = hooks })
 
 vim.pack.add({
-	-- Colorscheme
-	{ src = 'https://github.com/vague-theme/vague.nvim' },
-	-- Oil
-	-- { src = "https://github.com/stevearc/oil.nvim" },
-	-- Telescope
-	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
-	{ src = "https://github.com/nvim-lua/plenary.nvim" },
-	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim", name = 'fzf-native' },
-	-- LSP
-	{ src = "https://github.com/neovim/nvim-lspconfig" },
-	{ src = "https://github.com/mason-org/mason.nvim" },
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" }
+    -- Colorscheme
+    { src = 'https://github.com/vague-theme/vague.nvim' },
+    -- Oil
+    -- { src = "https://github.com/stevearc/oil.nvim" },
+    -- Telescope
+    { src = "https://github.com/nvim-telescope/telescope.nvim" },
+    { src = "https://github.com/nvim-lua/plenary.nvim" },
+    { src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim", name = 'fzf-native' },
+    -- LSP
+    { src = "https://github.com/neovim/nvim-lspconfig" },
+    { src = "https://github.com/mason-org/mason.nvim" },
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter" }
 })
 
 --
@@ -54,14 +51,14 @@ vim.pack.add({
 
 require("mason").setup()
 require("nvim-treesitter").install({
-	'lua', 'c', 'cpp'
+    'lua', 'c', 'cpp',
 })
 -- luals is a copy of the standard lua_ls with the vim runtime path included,
 -- Removes the errors in the config.
 vim.lsp.enable({
-	"luals",
-	"clangd", "clang-format",
-	"astro-language-server", "html-lsp"
+    "luals",
+    "clangd", "clang-format",
+    "html-lsp", "css-lsp"
 })
 
 --
